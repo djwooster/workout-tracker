@@ -37,6 +37,7 @@ export default function Home() {
   const handleShowNav = () => {
     setShowNav(!showNav);
     console.log("test");
+    console.log("test2");
   };
 
   return (
