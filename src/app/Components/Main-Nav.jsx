@@ -1,5 +1,5 @@
 import { CalendarIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
-import Calendar from "./Calendar";
+import Calendar from "./ui/Calendar";
 import { useState } from "react";
 
 export default function Nav({ showNav, setShowNav, handleShowNav }) {

@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Calendar from "./Components/Calendar";
-import InputContainer from "./Components/InputContainer";
-import Button from "./Components/Button";
-import Nav from "./Components/Nav";
-import WorkoutForm from "./Components/WorkoutForm";
-import WorkoutSummary from "./Components/WorkoutSummary";
-import LeftNavMenu from "./Components/LeftNavMenu";
+import Calendar from "./Components/ui/Calendar";
+import InputContainer from "./Components/ui/InputContainer";
+import Button from "./Components/ui/Button";
+import Nav from "./Components/Main-Nav";
+import WorkoutForm from "./Components/ui/WorkoutForm";
+import WorkoutSummary from "./Components/ui/WorkoutSummary";
+import LeftNavMenu from "./Components/ui/LeftNavMenu";
 
 export default function Home() {
   const [workouts, setWorkOuts] = useState([]);
