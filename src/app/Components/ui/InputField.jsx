@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Input } from "./Input";
 
 function InputField({ placeholder }) {
   const [inputName, setInputName] = useState("");
@@ -11,14 +12,14 @@ function InputField({ placeholder }) {
   };
 
   return (
-    <input
+    <Input
       type="text"
       className="text-input"
       placeholder={placeholder}
       value={inputName}
       onChange={(e) => setInputName(e.target.value)}
       onSubmit={handleSubmit}
-    ></input>
+    />
   );
 }
 

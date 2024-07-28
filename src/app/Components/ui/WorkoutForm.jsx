@@ -1,5 +1,13 @@
 import { PlusIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
+import { Button } from "@/app/Components/ui/Button";
+import { Input } from "./input";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/app/components/ui/Tabs";
 
 export default function WorkoutForm({ onAddWorkout }) {
   const [exercise, setExercise] = useState("");
@@ -30,60 +38,61 @@ export default function WorkoutForm({ onAddWorkout }) {
   };
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
+    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
       <div className="input-box">
         <label htmlFor="exercise">Exercise</label>
-        <input
+        <Input
           id="exercise"
-          className="text-input"
+          className="text-Input"
           type="text"
           placeholder="Bicep Curls"
           value={exercise}
           onChange={(e) => setExercise(e.target.value)}
-        ></input>
+        ></Input>
       </div>
-      <div className="input-box">
+      <div className="flex flex-col gap-2">
         <label htmlFor="weight">Weight</label>
-        <input
+        <Input
           id="weight"
-          className="text-input"
-          type="text"
+          type="number"
           placeholder="125"
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
-        ></input>
-
-        <select value={unit} onChange={(e) => setUnit(e.target.value)}>
-          <option>lbs</option>
-          <option>kg</option>
-        </select>
+        ></Input>
+        <Tabs
+          defaultValue="lbs"
+          value={unit}
+          onValueChange={(value) => setUnit(value)}
+        >
+          <TabsList>
+            <TabsTrigger value="lbs">lbs</TabsTrigger>
+            <TabsTrigger value="kg">kg</TabsTrigger>
+          </TabsList>
+        </Tabs>
       </div>
       <div className="input-box">
         <label htmlFor="reps">Reps</label>
-        <input
+        <Input
           id="reps"
-          className="text-input"
-          type="text"
+          type="number"
           placeholder="12"
           value={reps}
           onChange={(e) => setReps(e.target.value)}
-        ></input>
+        ></Input>
       </div>
       <div className="input-box">
         <label htmlFor="sets">Sets</label>
-        <input
+        <Input
           id="sets"
-          className="text-input"
-          type="text"
+          type="number"
           placeholder="3"
           value={sets}
           onChange={(e) => setSets(e.target.value)}
-        ></input>
+        ></Input>
       </div>
-      <button className="primary">
-        <PlusIcon />
+      <Button variant="default" type="submit" onClick={handleSubmit}>
         Add to Workout
-      </button>
+      </Button>
     </form>
   );
 }

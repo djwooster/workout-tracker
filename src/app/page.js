@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Calendar from "./Components/ui/Calendar";
-import InputContainer from "./Components/ui/InputContainer";
-import Button from "./Components/ui/Button";
-import Nav from "./Components/Main-Nav";
-import WorkoutForm from "./Components/ui/WorkoutForm";
-import WorkoutSummary from "./Components/ui/WorkoutSummary";
-import LeftNavMenu from "./Components/ui/LeftNavMenu";
+import Calendar from "./components/ui/Calendar";
+import InputContainer from "./components/ui/InputContainer";
+import { Button } from "@/app/Components/ui/Button";
+
+import Nav from "./components/Main-Nav";
+import WorkoutForm from "./components/ui/WorkoutForm";
+import WorkoutSummary from "./components/ui/WorkoutSummary";
 
 export default function Home() {
   const [workouts, setWorkOuts] = useState([]);
@@ -27,6 +27,7 @@ export default function Home() {
 
   function handleDelete(id) {
     setWorkOuts(workouts.filter((workout) => workout.id != id));
+    localStorage.removeItem(`workout_${id}`);
   }
 
   function addWorkout(workout) {
@@ -34,23 +35,9 @@ export default function Home() {
     localStorage.setItem(`workout_${workout.id}`, JSON.stringify(workout));
   }
 
-  const handleShowNav = () => {
-    setShowNav(!showNav);
-    console.log("test");
-    console.log("test2");
-  };
-
   return (
     <>
-      <Nav
-        showNav={showNav}
-        setShowNav={setShowNav}
-        handleShowNav={handleShowNav}
-      />
-      {showNav && <LeftNavMenu />}
-
-      <main className="container">
-        <Calendar />
+      <main className="flex flex-col max-w-2xl mx-auto pt-10">
         <WorkoutForm onAddWorkout={addWorkout} />
       </main>
       <div className="summary-container">
