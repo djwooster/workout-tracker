@@ -6,7 +6,7 @@ import {
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/components/ui/Tabs";
+} from "@/app/Components/ui/Tabs";
 
 export default function WorkoutForm({ onAddWorkout }) {
   const [exercise, setExercise] = useState("");
