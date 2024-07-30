@@ -37,12 +37,14 @@ export default function WorkoutForm({ onAddWorkout }) {
   };
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-      <div className="input-box">
+    <form
+      className="flex flex-col gap-4 p-4 border rounded-md shadow-sm bg-white "
+      onSubmit={handleSubmit}
+    >
+      <div className="flex flex-col gap-2">
         <label htmlFor="exercise">Exercise</label>
         <Input
           id="exercise"
-          className="text-Input"
           type="text"
           placeholder="Bicep Curls"
           value={exercise}
@@ -69,7 +71,7 @@ export default function WorkoutForm({ onAddWorkout }) {
           </TabsList>
         </Tabs>
       </div>
-      <div className="input-box">
+      <div className="flex flex-col gap-2">
         <label htmlFor="reps">Reps</label>
         <Input
           id="reps"
@@ -79,7 +81,7 @@ export default function WorkoutForm({ onAddWorkout }) {
           onChange={(e) => setReps(e.target.value)}
         ></Input>
       </div>
-      <div className="input-box">
+      <div className="flex flex-col gap-2">
         <label htmlFor="sets">Sets</label>
         <Input
           id="sets"

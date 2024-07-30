@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./styles/globals.css";
+import MainNav from "./components/ui/Main-Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-slate-50">
+        <MainNav />
+        {children}
+      </body>
     </html>
   );
 }

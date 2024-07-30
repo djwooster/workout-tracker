@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import WorkoutForm from "./Components/ui/WorkoutForm";
 import WorkoutSummary from "./Components/ui/WorkoutSummary";
+import EmptyState from "./components/ui/EmptyState";
 
 export default function Home() {
   const [workouts, setWorkOuts] = useState([]);
@@ -33,16 +34,24 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex flex-col max-w-2xl mx-auto pt-10">
+      <main className="flex flex-col max-w-2xl mx-auto mt-4 gap-4">
         <WorkoutForm onAddWorkout={addWorkout} />
+
+        <div
+          id="wosummary"
+          className="flex flex-row w-full h-full m-auto max-w-2xl gap-2"
+        >
+          {workouts.length > 0 ? (
+            <WorkoutSummary
+              workouts={workouts}
+              onAddWorkout={addWorkout}
+              onDelete={handleDelete}
+            />
+          ) : (
+            <EmptyState />
+          )}
+        </div>
       </main>
-      <div className="summary-container">
-        <WorkoutSummary
-          workouts={workouts}
-          onAddWorkout={addWorkout}
-          onDelete={handleDelete}
-        />
-      </div>
     </>
   );
 }
