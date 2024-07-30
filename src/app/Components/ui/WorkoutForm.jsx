@@ -38,7 +38,7 @@ export default function WorkoutForm({ onAddWorkout }) {
 
   return (
     <form
-      className="flex flex-col gap-4 p-4 border rounded-md shadow-sm bg-white "
+      className="flex flex-col gap-4 p-4 border rounded-md bg-white "
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col gap-2">

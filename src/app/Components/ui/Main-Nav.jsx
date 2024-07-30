@@ -3,6 +3,7 @@ import React from "react";
 
 import { CalendarIcon } from "@radix-ui/react-icons";
 import { Button } from "./Button";
+import { Calendar } from "lucide-react";
 
 const MainNav = () => {
   return (
@@ -10,7 +11,8 @@ const MainNav = () => {
       <Button variant="outline">Menu</Button>
       <Link href="/">
         <Button variant="outline">
-          <CalendarIcon className="w-6 h-6 text-primary" />
+          {/* <CalendarIcon className="w-6 h-6 text-primary" /> */}
+          <Calendar />
         </Button>
       </Link>
     </nav>

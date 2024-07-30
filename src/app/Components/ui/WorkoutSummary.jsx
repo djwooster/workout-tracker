@@ -11,7 +11,7 @@ import { Button } from "./Button";
 
 export default function WorkoutSummary({ workouts, onDelete }) {
   return (
-    <div className="flex flex-col h-full w-full gap-1 mt-4 m-auto border rounded-md justify-center p-3 ">
+    <div className="flex flex-col h-full w-full gap-1 mt-4 m-auto justify-center ">
       <h4 className="text-lg font-semibold">
         {workouts.length} {workouts.length === 1 ? "Exercise" : "Exercises"}
       </h4>
@@ -32,7 +32,7 @@ export default function WorkoutSummary({ workouts, onDelete }) {
               <div key={index} className="flex items-start justify-between">
                 <div className="flex flex-col gap-1">
                   <p className="text-sm font-light text-muted-foreground">
-                    Exercise:
+                    Exercise
                   </p>
                   <p className="text-md font-medium leading-none">
                     {workout.exercise}
@@ -40,7 +40,7 @@ export default function WorkoutSummary({ workouts, onDelete }) {
                 </div>
                 <div className="flex flex-col gap-1">
                   <p className="text-sm font-light text-muted-foreground">
-                    Reps:
+                    Reps
                   </p>
                   <p className="text-sm font-medium leading-none">
                     {workout.reps}
@@ -48,7 +48,7 @@ export default function WorkoutSummary({ workouts, onDelete }) {
                 </div>
                 <div className="flex flex-col gap-1">
                   <p className="text-sm font-light text-muted-foreground">
-                    Weight:
+                    Weight
                   </p>
                   <p className="text-sm font-medium leading-none">
                     {workout.weight}
