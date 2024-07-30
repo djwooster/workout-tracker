@@ -5,7 +5,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/app/Components/ui/card";
+} from "@/app/Components/ui/Card";
 import Workout from "./Workout";
 import { Button } from "./Button";
 
