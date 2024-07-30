@@ -18,7 +18,7 @@ export default function WorkoutForm({ onAddWorkout }) {
   const handleSubmit = function (e) {
     e.preventDefault();
 
-    if (!exercise || !weight || !unit || !reps || !sets) return;
+    if (!exercise || !weight || !unit || !reps) return;
 
     const newWorkout = {
       id: Date.now(),
@@ -81,7 +81,7 @@ export default function WorkoutForm({ onAddWorkout }) {
           onChange={(e) => setReps(e.target.value)}
         ></Input>
       </div>
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         <label htmlFor="sets">Sets</label>
         <Input
           id="sets"
@@ -90,7 +90,7 @@ export default function WorkoutForm({ onAddWorkout }) {
           value={sets}
           onChange={(e) => setSets(e.target.value)}
         ></Input>
-      </div>
+      </div> */}
       <Button variant="default" type="submit" onClick={handleSubmit}>
         Add to Workout
       </Button>
