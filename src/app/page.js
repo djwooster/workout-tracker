@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import WorkoutForm from "./Components/ui/WorkoutForm";
 import WorkoutSummary from "./Components/ui/WorkoutSummary";
-import EmptyState from "./components/ui/EmptyState";
+import EmptyState from "./Components/ui/EmptyState";
 
 export default function Home() {
   const [workouts, setWorkOuts] = useState([]);
